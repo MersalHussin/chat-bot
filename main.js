@@ -15,13 +15,16 @@ async function getBootAnswers (){
     
     let userMessage = inputMessage.value.trim();
 
-    // بشوف هل القيمة اللي دخلها الشخص نفس القيمة اللي راجعه من الريسبونس
+      // بشوف هل القيمة اللي دخلها الشخص نفس القيمة اللي راجعه من الريسبونس
     if(userMessage != ""){
+      // لو عندي قيمة بشوف هل القيمة دي موجودة في لداتا بتاعتي ولا لأ
       data.forEach(answer => {
+      // لو الداتا موجودة بـ أطر ح السؤال والأجابه
         if(userMessage == answer.question){
-          console.log(answer.answer)
-          chatArea.innerHTML += `<p class="answer">${answer.question}</p>`
-          chatArea.innerHTML += `<p class="msg">${answer.answer}</p>`
+          chatArea.innerHTML += `<p class="msg">${answer.question}</p>`
+          setTimeout(() => {
+            chatArea.innerHTML += `<p class="answer">${answer.answer}</p>`
+          }, Math.floor(Math.random() * 4000));
         }
       });
     }else{
