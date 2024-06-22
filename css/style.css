@@ -1,0 +1,160 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+body {
+  background-color: #f4f6f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.bot-app {
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  max-width: 90%;
+  padding: 20px;
+  box-sizing: border-box;
+  transition: transform 0.3s ease;
+}
+
+.bot-app:hover {
+  transform: translateY(-10px);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bot-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bot-img img {
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.bot-img img:hover {
+  transform: rotate(10deg) scale(1.1);
+}
+
+.bot-name {
+  margin: 10px 0;
+  font-size: 26px;
+  color: #333;
+}
+
+.chat-area {
+  background-color: #f9f9f9;
+  display: flex;
+  border-radius: 10px;
+  padding: 15px;
+  width: 100%;
+  height: 350px;
+  margin: 20px 0;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  flex-direction: column;
+  align-items: center;
+  overflow: scroll;
+
+}
+
+.msg, .answer {
+  display: flex;
+  padding: 10px 15px;
+  /* border-radius: 20px; */
+  margin: 5px 0;
+  width: 100%;
+  max-width: 80%;
+  position: relative;
+  flex-wrap: wrap;
+  text-align:right;
+}
+
+.msg {
+  background-color: #e1ffc7;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  animation: fadeInLeft 0.5s ease-in-out;
+  justify-content: right;
+
+
+
+}
+
+.answer {
+  background-color: #ffe7c7;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  animation: fadeInRight 0.5s ease-in-out;
+  justify-content: left;
+
+  
+}
+
+@keyframes fadeInLeft {
+  from {
+      opacity: 0;
+      transform: translateX(-50px);
+  }
+  to {
+      opacity: 1;
+      transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+      opacity: 0;
+      transform: translateX(50px);
+  }
+  to {
+      opacity: 1;
+      transform: translateX(0);
+  }
+}
+
+form {
+  display: flex;
+  width: 100%;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  transition: border-color 0.3s;
+  text-align: right;
+}
+
+input[type="text"]:focus {
+  border-color: #007bff;
+}
+
+input[type="submit"] {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+  background-color: #0056b3;
+}
